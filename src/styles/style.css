@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/raleway-regular.woff2') format('woff2'),
+    url('/fonts/raleway-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --text-color: #ccc;
+  --background-color: #0a1a2d;
+  --link-color: #91aac9;
+  --active-link-color: #fff;
+  --modal-text-color: #0a1a2d;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  padding: 32px 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-variant-numeric: lining-nums;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  display: block;
+  width: fit-content;  
+  color: var(--link-color);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--active-link-color);
+  }
+}
+
+ul,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container {
+  padding: 0px 32px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--text-color);
+  border-radius: 5px;
+}
+
+.modal__close {
+  width: 22px;
+  height: 22px;
+  margin-top: -20px;
+  margin-right: -20px;
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background: url(../images/close.svg);
+  background-position: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--active-link-color);
+  }
+}
+
+.modal__title,
+.modal__item {
+  color: var(--modal-text-color);
+}
+
+.modal__title {
+  margin-bottom: 15px;
+}
